@@ -8,6 +8,5 @@ public class TestFunction {
     public void testIntegration() {
         Function function = new Function(.6);
         System.out.println(function.getConstant());
-        System.out.println(function.integrate(1));
     }
 }

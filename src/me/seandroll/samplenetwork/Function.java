@@ -13,19 +13,19 @@ public class Function {
             double value = polynomial(i) + weight;
             sum += value;
         }
-        this.constant = (1-sum)*INTEGRATION_CONSTANT;
+        this.constant = (1-sum)/(1/INTEGRATION_CONSTANT);
     }
 
     public static double polynomial(double value) {
-        double numerator = Math.pow(value, 3) + 3*value;
-        double denominator = Math.pow(value, 4) + 2;
+        double numerator = 4*Math.pow(Math.E, value-8);
+        double denominator = 1 + Math.pow(Math.E, value-10);
         return numerator/denominator;
     }
 
     public double integrate(double b) {
         double sum = 0.0;
         for(double i = 0; i < b; i+=INTEGRATION_CONSTANT) {
-            double value = polynomial(1) + this.weight+this.constant;
+            double value = polynomial(i) + this.weight+this.constant;
             sum += value;
         }
         return sum;
